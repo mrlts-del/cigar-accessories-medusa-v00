@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button" // Revert to @/components alias
 import {
   Dialog,
   DialogContent,
@@ -9,9 +9,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/dialog" // Revert to @/components alias
+import { Input } from "@/components/ui/input" // Revert to @/components alias
+import { Label } from "@/components/ui/label" // Revert to @/components alias
+import { cn } from "@/lib/utils"
 
 // Simple cookie utility (replace with a more robust solution if needed)
 const setCookie = (name: string, value: string, days: number) => {
@@ -103,7 +104,8 @@ export function AgeVerificationModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      {/* Add z-[60] to ensure it's above the nav bar (z-50) */}
+      <DialogContent className={cn("sm:max-w-[425px]", "z-[60]")}>
         <DialogHeader>
           <DialogTitle>Age Verification Required</DialogTitle>
           <DialogDescription>

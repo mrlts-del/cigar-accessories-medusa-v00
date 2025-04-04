@@ -36,15 +36,17 @@ module.exports = defineConfig({
         }
       }
     },
-    // Add Stripe Payment Module Configuration
-    "@medusajs/payment-stripe": { // Use the correct package name found earlier
-      resolve: "@medusajs/payment-stripe",
+    // Temporarily comment out Stripe Payment Module Configuration due to persistent loading issues
+    /*
+    "@medusajs/payment-stripe": {
+      // resolve: "@medusajs/payment-stripe", // Removed resolve
       options: {
         api_key: process.env.STRIPE_SECRET_KEY,
         webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
-        // You can add more options here if needed, e.g., capture: true
+        // capture: true // Example option
       }
     },
+    */
     // Other modules can be added here if needed, otherwise defaults are used
   },
 })

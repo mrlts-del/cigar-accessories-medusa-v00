@@ -18,8 +18,8 @@
     "paths": {
       "@lib/*": ["lib/*"],
       "@modules/*": ["modules/*"],
-      "@pages/*": ["pages/*"],
-      "@/components/*": ["@/components/*"] // Add alias for Shadcn components
+      "@components/*": ["components/*"], // Change alias to @components
+      "@/lib/*": ["lib/*"] // Keep this for cn utility for now
     },
     "plugins": [
       {
